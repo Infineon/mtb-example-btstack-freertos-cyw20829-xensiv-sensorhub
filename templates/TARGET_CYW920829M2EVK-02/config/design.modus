@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration app="BACKEND" formatVersion="14" lastSavedWith="Configurator Backend" lastSavedWithVersion="3.20.0" toolsPackage="ModusToolbox 3.2.0" xmlns="http://cypress.com/xsd/cydesignfile_v5">
+<Configuration app="BACKEND" formatVersion="14" lastSavedWith="Configurator Backend" lastSavedWithVersion="3.50.0" toolsPackage="ModusToolbox 3.5.0" xmlns="http://cypress.com/xsd/cydesignfile_v5">
     <Devices>
-        <Device mpn="CYW20829B0LKML">
+        <Device mpn="CYW20829B1010">
             <BlockConfig>
                 <Block location="ioss[0].port[0].pin[0]">
                     <Aliases>
@@ -196,11 +196,6 @@
                         <Alias value="CYBSP_USER_LED2"/>
                     </Aliases>
                 </Block>
-                <Block location="scb[2]">
-                    <Aliases>
-                        <Alias value="UART"/>
-                    </Aliases>
-                </Block>
                 <Personality template="sysclocks" version="3.0">
                     <Block location="srss[0].clock[0]" locked="true"/>
                 </Personality>
@@ -221,37 +216,49 @@
                 <Personality template="hfclk" version="3.0">
                     <Block location="srss[0].clock[0].hfclk[0]" locked="true"/>
                     <Parameters>
+                        <Param id="ClkHfCsv" value="false"/>
+                        <Param id="accuracyCsv" value="99"/>
+                        <Param id="actionCsv" value="FAULT"/>
                         <Param id="divider" value="1"/>
+                        <Param id="sourceClockCsv" value="IMO"/>
                         <Param id="sourceClockNumber" value="0"/>
                     </Parameters>
                 </Personality>
                 <Personality template="hfclk" version="3.0">
                     <Block location="srss[0].clock[0].hfclk[1]" locked="true"/>
                     <Parameters>
+                        <Param id="ClkHfCsv" value="false"/>
+                        <Param id="accuracyCsv" value="99"/>
+                        <Param id="actionCsv" value="FAULT"/>
                         <Param id="divider" value="1"/>
+                        <Param id="sourceClockCsv" value="IMO"/>
                         <Param id="sourceClockNumber" value="0"/>
                     </Parameters>
                 </Personality>
                 <Personality template="hfclk" version="3.0">
                     <Block location="srss[0].clock[0].hfclk[2]" locked="true"/>
                     <Parameters>
+                        <Param id="ClkHfCsv" value="false"/>
+                        <Param id="accuracyCsv" value="99"/>
+                        <Param id="actionCsv" value="FAULT"/>
                         <Param id="divider" value="1"/>
+                        <Param id="sourceClockCsv" value="IMO"/>
                         <Param id="sourceClockNumber" value="2"/>
                     </Parameters>
                 </Personality>
                 <Personality template="hfclk" version="3.0">
                     <Block location="srss[0].clock[0].hfclk[3]" locked="true"/>
                     <Parameters>
+                        <Param id="ClkHfCsv" value="false"/>
+                        <Param id="accuracyCsv" value="99"/>
+                        <Param id="actionCsv" value="FAULT"/>
                         <Param id="divider" value="2"/>
+                        <Param id="sourceClockCsv" value="IMO"/>
                         <Param id="sourceClockNumber" value="1"/>
                     </Parameters>
                 </Personality>
                 <Personality template="mxs40iho" version="1.0">
                     <Block location="srss[0].clock[0].iho[0]" locked="true"/>
-                    <Parameters>
-                        <Param id="IHOTrim" value="1396"/>
-                        <Param id="apply_trim" value="true"/>
-                    </Parameters>
                 </Personality>
                 <Personality template="imo" version="3.0">
                     <Block location="srss[0].clock[0].imo[0]" locked="true"/>
@@ -262,7 +269,10 @@
                 <Personality template="lfclk" version="3.0">
                     <Block location="srss[0].clock[0].lfclk[0]" locked="true"/>
                     <Parameters>
+                        <Param id="ClkLfCsv" value="false"/>
+                        <Param id="accuracyCsv" value="99"/>
                         <Param id="sourceClock" value="pilo"/>
+                        <Param id="sourceClockCsv" value="IMO"/>
                     </Parameters>
                 </Personality>
                 <Personality template="mfo" version="3.0">
@@ -308,7 +318,7 @@
                         <Param id="backupSrc" value="VDDD"/>
                         <Param id="deepsleepLatency" value="0"/>
                         <Param id="enableLowPowerProfileMode" value="false"/>
-                        <Param id="idlePwrMode" value="CY_CFG_PWR_MODE_DEEPSLEEP_OFF"/>
+                        <Param id="idlePwrMode" value="CY_CFG_PWR_MODE_DEEPSLEEP"/>
                         <Param id="minCurrRegulator" value="CY_SYSPM_LDO_MODE_NORMAL"/>
                         <Param id="sdr0BypassModeMacro" value="true"/>
                         <Param id="vddaMv" value="3300"/>

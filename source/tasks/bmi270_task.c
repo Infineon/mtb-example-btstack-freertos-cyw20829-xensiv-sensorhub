@@ -156,7 +156,7 @@ static cy_rslt_t motionsensor_update_orientation(mtb_bmi270_t *dev, orientation_
     result = mtb_bmi270_read(&bmi270_obj, &data);
     if (CY_RSLT_SUCCESS != result)
     {
-    	printf("Error reading from BMI270 sensor\r\n");
+        printf("Error reading from BMI270 sensor\r\n");
         *orientation = ORIENTATION_NULL;
         return result;
     }
